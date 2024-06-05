@@ -108,9 +108,7 @@ export EDITOR='/opt/howebrew/bin/nvim'
 # Example aliases
 # alias zshconfig="mate ~/.zshrc"
 # alias ohmyzsh="mate ~/.oh-my-zsh"
-alias journey="cd ~/code/chipax_src/journey/"
-alias chipax_src="cd ~/code/chipax_src/"
-alias chipax_monolith="cd ~/code/chipax_src/chipax_monolith/"
+
 export VOLTA_HOME="$HOME/.volta"
 export PATH="$VOLTA_HOME/bin:$PATH"
 
@@ -123,6 +121,10 @@ alias v="/opt/homebrew/bin/nvim"
 alias cl='clear'
 
 alias lg='lazygit'
+
+# starship themes
+alias mocha='touch ~/.config/starship.toml && ln -s -f ~/code/dotfiles/starship/starship_mocha.toml ~/.config/starship.toml'
+alias latte='touch ~/.config/starship.toml && ln -s -f ~/code/dotfiles/starship/starship_latte.toml ~/.config/starship.toml'
 
 # EZA
 alias l='eza -l --icons --git -a'
