@@ -123,8 +123,8 @@ alias cl='clear'
 alias lg='lazygit'
 
 # starship themes
-alias mocha='touch ~/.config/starship.toml && ln -s -f ~/code/dotfiles/starship/starship_mocha.toml ~/.config/starship.toml'
-alias latte='touch ~/.config/starship.toml && ln -s -f ~/code/dotfiles/starship/starship_latte.toml ~/.config/starship.toml'
+alias light='export STARSHIP_CONFIG=~/code/dotfiles/starship/starship_latte.toml'
+alias dark='export STARSHIP_CONFIG=~/code/dotfiles/starship/starship_mocha.toml'
 
 # EZA
 alias l='eza -l --icons --git -a'
