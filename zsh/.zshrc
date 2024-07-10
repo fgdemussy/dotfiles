@@ -1,10 +1,3 @@
-# Enable Powerlevel10k instant prompt. Should stay close to the top of ~/.zshrc.
-# Initialization code that may require console input (password prompts, [y/n]
-# confirmations, etc.) must go above this block; everything else may go below.
-# if [[ -r "${XDG_CACHE_HOME:-$HOME/.cache}/p10k-instant-prompt-${(%):-%n}.zsh" ]]; then
-#   source "${XDG_CACHE_HOME:-$HOME/.cache}/p10k-instant-prompt-${(%):-%n}.zsh"
-# fi
-
 # If you come from bash you might have to change your $PATH.
 # export PATH=$HOME/bin:/usr/local/bin:$PATH
 
@@ -78,7 +71,7 @@ export ZSH="$HOME/.oh-my-zsh"
 # Custom plugins may be added to $ZSH_CUSTOM/plugins/
 # Example format: plugins=(rails git textmate ruby lighthouse)
 # Add wisely, as too many plugins slow down shell startup.
-plugins=(git autojump zsh-navigation-tools zsh-syntax-highlighting zsh-autosuggestions)
+plugins=(git zsh-syntax-highlighting zsh-autosuggestions)
 
 source $ZSH/oh-my-zsh.sh
 
@@ -122,20 +115,33 @@ alias cl='clear'
 
 alias lg='lazygit'
 
+alias cat=bat
+
 # starship themes
 alias light='export STARSHIP_CONFIG=~/code/dotfiles/starship/starship_latte.toml'
 alias dark='export STARSHIP_CONFIG=~/code/dotfiles/starship/starship_mocha.toml'
+export STARSHIP_CONFIG=~/code/dotfiles/starship/starship_mocha.toml
 
 # EZA
 alias l='eza -l --icons --git -a'
 alias lt='eza --tree --level=2 --long --icons --git'
 alias lta='eza --tree --level=2 --long --icons --git -a'
 
+# FZF
+export FZF_DEFAULT_COMMAND='fd --type f --hidden --follow'
+
 # Navigation
 cx() { cd "$@" && l; }
-fcd() { cd "$(find . -type d -not -path '*/.*' | fzf)" && l; }
-f() { echo "$(find . -type f -not -path '*/.*' | fzf)" | pbcopy }
-fv() { nvim "$(find . -type f -not -path '*/.*' | fzf)" }
+fcd() { cd "$(fd --type d | fzf)" && l; }
+f() { echo "$(fd | fzf)" | pbcopy }
+fv() { nvim "$(fd | fzf --preview 'bat -n --color=always {}')" }
+
+# using ripgrep combined with preview
+# find-in-file - usage: fif <searchTerm>
+fif() {
+  if [ ! "$#" -gt 0 ]; then echo "Need a string to search for!"; return 1; fi
+  rg --files-with-matches --no-messages "$1" | fzf --preview "highlight -O ansi -l {} 2> /dev/null | rg --colors 'match:bg:yellow' --ignore-case --pretty --context 10 '$1' || rg --ignore-case --pretty --context 10 '$1' {}"
+}
 
 # Set up fzf key bindings and fuzzy completion
 source <(fzf --zsh)
