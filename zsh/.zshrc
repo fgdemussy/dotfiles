@@ -105,6 +105,9 @@ export EDITOR='/opt/howebrew/bin/nvim'
 export VOLTA_HOME="$HOME/.volta"
 export PATH="$VOLTA_HOME/bin:$PATH"
 
+# Created by `pipx` on 2024-06-25 13:47:56
+export PATH="$PATH:/Users/fran/.local/bin"
+
 # Permite que node utilice más memoria para compilar.
 export NODE_OPTIONS="--max-old-space-size=4096"
 
