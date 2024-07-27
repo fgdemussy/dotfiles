@@ -88,7 +88,7 @@ export LANG=en_US.UTF-8
 # else
 #   export EDITOR='mvim'
 # fi
-export EDITOR='/opt/howebrew/bin/nvim'
+export EDITOR='nvim'
 
 # Compilation flags
 # export ARCHFLAGS="-arch x86_64"
@@ -101,6 +101,9 @@ export EDITOR='/opt/howebrew/bin/nvim'
 # Example aliases
 # alias zshconfig="mate ~/.zshrc"
 # alias ohmyzsh="mate ~/.oh-my-zsh"
+
+alias reload-zsh="source ~/.zshrc"
+alias edit-zsh="nvim ~/.zshrc"
 
 export VOLTA_HOME="$HOME/.volta"
 export PATH="$VOLTA_HOME/bin:$PATH"
@@ -131,7 +134,11 @@ alias lt='eza --tree --level=2 --long --icons --git'
 alias lta='eza --tree --level=2 --long --icons --git -a'
 
 # FZF
-export FZF_DEFAULT_COMMAND='fd --type f --hidden --follow'
+export FZF_DEFAULT_COMMAND='fd --type f --strip-cwd-prefix --hidden --follow --exclude .git'
+export FZF_DEFAULT_OPTS='--height 50%'
+
+# LAZIGIT
+export XDG_CONFIG_HOME="$HOME/.config"
 
 # Navigation
 cx() { cd "$@" && l; }
