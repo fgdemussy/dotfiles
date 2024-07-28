@@ -134,17 +134,16 @@ alias lt='eza --tree --level=2 --long --icons --git'
 alias lta='eza --tree --level=2 --long --icons --git -a'
 
 # FZF
-export FZF_DEFAULT_COMMAND='fd --type f --strip-cwd-prefix --hidden --follow --exclude .git'
-export FZF_DEFAULT_OPTS='--height 50%'
+export FZF_DEFAULT_COMMAND='fd --type f --hidden --follow --exclude .git'
+export FZF_DEFAULT_OPTS='--height 60% --tmux 60% --layout reverse --border --inline-info'
 
 # LAZIGIT
 export XDG_CONFIG_HOME="$HOME/.config"
 
 # Navigation
-cx() { cd "$@" && l; }
 fcd() { cd "$(fd --type d | fzf)" && l; }
-f() { echo "$(fd | fzf)" | pbcopy }
-fv() { nvim "$(fd | fzf --preview 'bat -n --color=always {}')" }
+f() { echo "$(fzf)" | pbcopy }
+fv() { nvim "$(fzf --tmux 100%,50% --preview 'bat -n --color=always {}')" }
 
 # using ripgrep combined with preview
 # find-in-file - usage: fif <searchTerm>
