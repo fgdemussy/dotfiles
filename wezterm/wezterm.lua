@@ -15,6 +15,6 @@ return {
 	font = wezterm.font("JetBrains Mono"),
 	window_decorations = "RESIZE",
 	colors = {
-		cursor_bg = "#f9e2af", -- Catppuccin mocha - yellow
+		cursor_bg = "#80e397", -- light green
 	},
 }
