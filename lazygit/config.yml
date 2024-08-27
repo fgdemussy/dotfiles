@@ -6,4 +6,5 @@ gui:
       - "#11111b" # catppuccin mocha - crust
 git:
   paging:
-    externalDiffCommand: difft --color=always --display=inline --syntax-highlight=off
+    colorArg: always
+    pager: delta --dark --paging=never
