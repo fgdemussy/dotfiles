@@ -1,10 +1,2 @@
 os:
-  editPreset: 'nvim'
-gui:
-  theme:
-    selectedLineBgColor:
-      - "#11111b" # catppuccin mocha - crust
-git:
-  paging:
-    colorArg: always
-    pager: delta --dark --paging=never  --line-numbers
+  editPreset: "nvim"
