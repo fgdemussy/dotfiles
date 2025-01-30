@@ -124,9 +124,9 @@ alias lg='lazygit'
 alias cat=bat
 
 # starship themes
-alias light='export STARSHIP_CONFIG=~/code/dotfiles/starship/starship_latte.toml'
-alias dark='export STARSHIP_CONFIG=~/code/dotfiles/starship/starship_mocha.toml'
-export STARSHIP_CONFIG=~/code/dotfiles/starship/starship_mocha.toml
+alias li='export STARSHIP_CONFIG=~/code/dotfiles/starship/starship_latte.toml'
+alias da='export STARSHIP_CONFIG=~/code/dotfiles/starship/starship_mocha.toml'
+export STARSHIP_CONFIG=~/code/dotfiles/starship/starship_latte.toml
 
 # EZA
 alias l='eza -l --icons --git -a'
@@ -151,6 +151,9 @@ fif() {
   if [ ! "$#" -gt 0 ]; then echo "Need a string to search for!"; return 1; fi
   rg --files-with-matches --no-messages "$1" | fzf --preview "highlight -O ansi -l {} 2> /dev/null | rg --colors 'match:bg:yellow' --ignore-case --pretty --context 10 '$1' || rg --ignore-case --pretty --context 10 '$1' {}"
 }
+
+# docker ps
+fdps() { docker ps --format 'table {{.Names}}\t{{.Ports}}\t{{.Status}}' | fzf }
 
 # Set up fzf key bindings and fuzzy completion
 source <(fzf --zsh)

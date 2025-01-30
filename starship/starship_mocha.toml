@@ -1,7 +1,7 @@
 # Sets user-defined palette
 palette = "catppuccin_mocha"
 # a minimal left prompt
-format = """$os$directory$character"""
+format = """ $os$directory$character"""
 # move the rest of the prompt to the right
 right_format = """$all"""
 command_timeout = 1000
@@ -67,7 +67,7 @@ symbol = " "
 
 [git_branch]
 style = "flamingo"
-format =  '[$symbol$branch(:$remote_branch) ]($style)'
+format = '[$symbol$branch(:$remote_branch) ]($style)'
 symbol = " "
 
 [golang]
