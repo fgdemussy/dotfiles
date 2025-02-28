@@ -124,8 +124,8 @@ alias lg='lazygit'
 alias cat=bat
 
 # starship themes
-alias li='export STARSHIP_CONFIG=~/code/dotfiles/starship/starship_latte.toml'
-alias da='export STARSHIP_CONFIG=~/code/dotfiles/starship/starship_mocha.toml'
+alias li='export STARSHIP_CONFIG=~/.config/starship/starship_latte.toml'
+alias da='export STARSHIP_CONFIG=~/.config/starship/starship_mocha.toml'
 export STARSHIP_CONFIG=~/code/dotfiles/starship/starship_latte.toml
 
 # EZA
