@@ -12,7 +12,6 @@ htop
 jq
 lazygit
 mysql
-neovim
 node
 pipx
 pv
@@ -20,6 +19,5 @@ ripgrep
 starship
 tmux
 volta
-watchman
-zellij
 zoxide
+zsh-vi-mode
