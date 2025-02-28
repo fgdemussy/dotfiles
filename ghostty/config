@@ -1,1 +1,7 @@
 theme = dark:catppuccin-mocha,light:catppuccin-latte
+mouse-hide-while-typing = true
+keybind = global:cmd+/=toggle_quick_terminal
+macos-option-as-alt = true
+# window-decoration = true
+# background-opacity = 0.8
+# background-blur-radius = 20
