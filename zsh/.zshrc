@@ -129,15 +129,19 @@ alias da='export STARSHIP_CONFIG=~/code/dotfiles/starship/starship_mocha.toml'
 export STARSHIP_CONFIG=~/code/dotfiles/starship/starship_latte.toml
 
 # EZA
+# https://github.com/eza-community/eza
 alias l='eza -l --icons --git -a'
+alias lm='eza -l --icons --git -a --sort=modified'
 alias lt='eza --tree --level=2 --long --icons --git'
 alias lta='eza --tree --level=2 --long --icons --git -a'
 
 # FZF
+# https://github.com/junegunn/fzf
 export FZF_DEFAULT_COMMAND='fd --type f --hidden --follow --exclude .git'
 export FZF_DEFAULT_OPTS='--height 60% --tmux 60% --layout reverse --border --inline-info'
 
 # LAZIGIT
+# https://github.com/jesseduffield/lazygit
 export XDG_CONFIG_HOME="$HOME/.config"
 
 # Navigation
@@ -160,3 +164,10 @@ source <(fzf --zsh)
 
 eval "$(starship init zsh)"
 eval "$(zoxide init zsh)"
+
+# zsh-vi-mode plugin
+# https://github.com/jeffreytse/zsh-vi-mode
+source $(brew --prefix)/opt/zsh-vi-mode/share/zsh-vi-mode/zsh-vi-mode.plugin.zsh
+
+# Added by LM Studio CLI (lms)
+export PATH="$PATH:/Users/fran/.lmstudio/bin"
