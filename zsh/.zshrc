@@ -105,14 +105,6 @@ export EDITOR='nvim'
 alias reload-zsh="source ~/.zshrc"
 alias edit-zsh="nvim ~/.zshrc"
 
-export VOLTA_HOME="$HOME/.volta"
-export PATH="$VOLTA_HOME/bin:$PATH"
-
-# Created by `pipx` on 2024-06-25 13:47:56
-export PATH="$PATH:/Users/fran/.local/bin"
-
-# Permite que node utilice más memoria para compilar.
-export NODE_OPTIONS="--max-old-space-size=4096"
 
 # VIM
 alias v="/opt/homebrew/bin/nvim"
@@ -126,7 +118,17 @@ alias cat=bat
 # starship themes
 alias li='export STARSHIP_CONFIG=~/.config/starship/starship_latte.toml'
 alias da='export STARSHIP_CONFIG=~/.config/starship/starship_mocha.toml'
-export STARSHIP_CONFIG=~/code/dotfiles/starship/starship_latte.toml
+export STARSHIP_CONFIG=~/.config/starship/starship_latte.toml
+
+# Languages
+export VOLTA_HOME="$HOME/.volta"
+export PATH="$VOLTA_HOME/bin:$PATH"
+# Permite que node utilice más memoria para compilar.
+export NODE_OPTIONS="--max-old-space-size=4096"
+
+# Created by `pipx` on 2024-06-25 13:47:56
+export PATH="$PATH:/Users/fran/.local/bin"
+
 
 # EZA
 # https://github.com/eza-community/eza
