@@ -28,6 +28,7 @@ ripgrep
 rust
 starship
 stow
+tlrc
 tmux
 volta
 yazi
