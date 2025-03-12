@@ -173,3 +173,6 @@ source $(brew --prefix)/opt/zsh-vi-mode/share/zsh-vi-mode/zsh-vi-mode.plugin.zsh
 
 # Added by LM Studio CLI (lms)
 export PATH="$PATH:/Users/fran/.lmstudio/bin"
+
+# To enable command history in iex
+export ERL_AFLAGS="-kernel shell_history enabled"
