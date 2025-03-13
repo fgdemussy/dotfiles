@@ -137,6 +137,16 @@ alias lm='eza -l --icons --git -a --sort=modified'
 alias lt='eza --tree --level=2 --long --icons --git'
 alias lta='eza --tree --level=2 --long --icons --git -a'
 
+# YAZI
+y() {
+	local tmp="$(mktemp -t "yazi-cwd.XXXXXX")" cwd
+	yazi "$@" --cwd-file="$tmp"
+	if cwd="$(command cat -- "$tmp")" && [ -n "$cwd" ] && [ "$cwd" != "$PWD" ]; then
+		builtin cd -- "$cwd"
+	fi
+	rm -f -- "$tmp"
+}
+
 # FZF
 # https://github.com/junegunn/fzf
 export FZF_DEFAULT_COMMAND='fd --type f --hidden --follow --exclude .git'
