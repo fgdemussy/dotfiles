@@ -150,7 +150,7 @@ y() {
 # FZF
 # https://github.com/junegunn/fzf
 export FZF_DEFAULT_COMMAND='fd --type f --hidden --follow --exclude .git'
-export FZF_DEFAULT_OPTS='--height 60% --tmux 60% --layout reverse --border --inline-info'
+export FZF_DEFAULT_OPTS='--height 40% --tmux 40% --layout reverse --border --inline-info'
 
 # LAZIGIT
 # https://github.com/jesseduffield/lazygit
@@ -180,6 +180,14 @@ eval "$(zoxide init zsh)"
 # zsh-vi-mode plugin
 # https://github.com/jeffreytse/zsh-vi-mode
 source $(brew --prefix)/opt/zsh-vi-mode/share/zsh-vi-mode/zsh-vi-mode.plugin.zsh
+# The plugin will auto execute this zvm_after_init function
+# Since the default initialization mode, this plugin will overwrite the previous key 
+# bindings, this causes the key bindings of other plugins (i.e. fzf, zsh-autocomplete,
+# etc.) to fail.
+# See https://github.com/jeffreytse/zsh-vi-mode?tab=readme-ov-file#execute-extra-commands
+function zvm_after_init() {
+  source <(fzf --zsh)
+}
 
 # Added by LM Studio CLI (lms)
 export PATH="$PATH:/Users/fran/.lmstudio/bin"
