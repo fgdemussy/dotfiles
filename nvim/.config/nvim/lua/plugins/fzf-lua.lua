@@ -73,9 +73,11 @@ return {
           winopts = {
             title = " " .. vim.trim((fzf_opts.prompt or "Select"):gsub("%s*:%s*$", "")) .. " ",
             title_pos = "center",
+            fullscreen = false,
           },
         }, fzf_opts.kind == "codeaction" and {
           winopts = {
+            fullscreen = false,
             layout = "vertical",
             -- height is number of items minus 15 lines for the preview, with a max of 80% screen height
             height = math.floor(math.min(vim.o.lines * 0.8 - 16, #items + 2) + 0.5) + 16,
